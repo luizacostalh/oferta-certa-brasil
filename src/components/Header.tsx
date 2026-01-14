@@ -10,11 +10,8 @@ export function Header() {
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold text-lg">
-            5
-          </div>
-          <span className="text-lg font-bold text-foreground">
-            Top 5 <span className="text-primary">Ofertas</span>
+          <span className="text-xl font-bold text-foreground">
+            Price<span className="text-primary">Up</span>
           </span>
         </a>
 

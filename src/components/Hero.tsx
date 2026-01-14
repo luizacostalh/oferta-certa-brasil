@@ -26,19 +26,19 @@ export function Hero() {
 
           {/* Headline */}
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground mb-6 leading-tight animate-fade-in">
-            Top 5 ofertas em{' '}
+            Price<span className="text-accent">Up</span> –{' '}
             <span className="relative inline-block">
-              eletrônicos
+              O melhor preço
               <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none">
                 <path d="M2 6C50 2 150 2 198 6" stroke="hsl(var(--accent))" strokeWidth="3" strokeLinecap="round" />
               </svg>
             </span>{' '}
-            e eletrodomésticos
+            em destaque
           </h1>
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto animate-fade-in">
-            Comparamos preços em Amazon e Mercado Livre e destacamos as melhores oportunidades.{' '}
+            Comparamos preços na Amazon e no Mercado Livre para destacar as melhores oportunidades.{' '}
             <span className="font-semibold text-primary-foreground">Você compra no site oficial.</span>
           </p>
 
