@@ -11,6 +11,7 @@ interface MoreDealsSectionProps {
 export function MoreDealsSection({ deals }: MoreDealsSectionProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedStore, setSelectedStore] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<'discount' | 'price'>('discount');
   const [freeShippingOnly, setFreeShippingOnly] = useState(false);
 
@@ -29,6 +30,11 @@ export function MoreDealsSection({ deals }: MoreDealsSectionProps) {
       filtered = filtered.filter(d => d.category === selectedCategory);
     }
 
+    // Store filter
+    if (selectedStore) {
+      filtered = filtered.filter(d => d.store === selectedStore);
+    }
+
     // Free shipping filter
     if (freeShippingOnly) {
       filtered = filtered.filter(d => d.freeShipping);
@@ -42,7 +48,7 @@ export function MoreDealsSection({ deals }: MoreDealsSectionProps) {
     }
 
     return filtered;
-  }, [deals, searchQuery, selectedCategory, sortBy, freeShippingOnly]);
+  }, [deals, searchQuery, selectedCategory, selectedStore, sortBy, freeShippingOnly]);
 
   return (
     <section id="ofertas" className="py-12 md:py-16 bg-muted/30">
@@ -57,7 +63,7 @@ export function MoreDealsSection({ deals }: MoreDealsSectionProps) {
             Mais Ofertas
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Outras oportunidades além do Top 5, atualizadas periodicamente.
+            Outras ofertas relevantes além do Top 5, atualizadas periodicamente.
           </p>
         </div>
       </div>
@@ -68,6 +74,8 @@ export function MoreDealsSection({ deals }: MoreDealsSectionProps) {
         onSearchChange={setSearchQuery}
         selectedCategory={selectedCategory}
         onCategoryChange={setSelectedCategory}
+        selectedStore={selectedStore}
+        onStoreChange={setSelectedStore}
         sortBy={sortBy}
         onSortChange={setSortBy}
         freeShippingOnly={freeShippingOnly}
