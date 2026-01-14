@@ -1,7 +1,7 @@
-import { Search, SlidersHorizontal, X } from 'lucide-react';
+import { Search, SlidersHorizontal, X, Store } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from './ui/button';
-import { categories } from '@/data/mockDeals';
+import { categories, stores } from '@/data/mockDeals';
 import { cn } from '@/lib/utils';
 
 interface SearchFiltersProps {
@@ -9,6 +9,8 @@ interface SearchFiltersProps {
   onSearchChange: (query: string) => void;
   selectedCategory: string | null;
   onCategoryChange: (category: string | null) => void;
+  selectedStore: string | null;
+  onStoreChange: (store: string | null) => void;
   sortBy: 'discount' | 'price';
   onSortChange: (sort: 'discount' | 'price') => void;
   freeShippingOnly: boolean;
@@ -20,6 +22,8 @@ export function SearchFilters({
   onSearchChange,
   selectedCategory,
   onCategoryChange,
+  selectedStore,
+  onStoreChange,
   sortBy,
   onSortChange,
   freeShippingOnly,
@@ -93,46 +97,82 @@ export function SearchFilters({
 
         {/* Extended Filters */}
         {showFilters && (
-          <div className="mt-4 pt-4 border-t border-border flex flex-wrap gap-4 animate-fade-in">
-            {/* Sort */}
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-muted-foreground">Ordenar:</span>
-              <div className="flex gap-1">
-                <button
-                  onClick={() => onSortChange('discount')}
-                  className={cn(
-                    'px-3 py-1 rounded-md text-sm font-medium transition-colors',
-                    sortBy === 'discount'
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-muted text-muted-foreground hover:text-foreground'
-                  )}
-                >
-                  Maior desconto
-                </button>
-                <button
-                  onClick={() => onSortChange('price')}
-                  className={cn(
-                    'px-3 py-1 rounded-md text-sm font-medium transition-colors',
-                    sortBy === 'price'
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-muted text-muted-foreground hover:text-foreground'
-                  )}
-                >
-                  Menor preço
-                </button>
+          <div className="mt-4 pt-4 border-t border-border space-y-4 animate-fade-in">
+            {/* Store Filter */}
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="flex items-center gap-2 mr-2">
+                <Store className="h-4 w-4 text-muted-foreground" />
+                <span className="text-sm text-muted-foreground">Loja:</span>
               </div>
+              <button
+                onClick={() => onStoreChange(null)}
+                className={cn(
+                  'px-3 py-1 rounded-md text-sm font-medium transition-colors',
+                  selectedStore === null
+                    ? 'bg-primary text-primary-foreground'
+                    : 'bg-muted text-muted-foreground hover:text-foreground'
+                )}
+              >
+                Todas
+              </button>
+              {stores.map((store) => (
+                <button
+                  key={store.id}
+                  onClick={() => onStoreChange(store.id)}
+                  className={cn(
+                    'px-3 py-1 rounded-md text-sm font-medium transition-colors',
+                    selectedStore === store.id
+                      ? 'bg-primary text-primary-foreground'
+                      : 'bg-muted text-muted-foreground hover:text-foreground'
+                  )}
+                >
+                  {store.label}
+                </button>
+              ))}
             </div>
 
-            {/* Free Shipping Toggle */}
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input
-                type="checkbox"
-                checked={freeShippingOnly}
-                onChange={(e) => onFreeShippingChange(e.target.checked)}
-                className="h-4 w-4 rounded border-input text-primary focus:ring-ring"
-              />
-              <span className="text-sm text-muted-foreground">Frete grátis</span>
-            </label>
+            {/* Sort and Free Shipping */}
+            <div className="flex flex-wrap gap-4">
+              {/* Sort */}
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-muted-foreground">Ordenar:</span>
+                <div className="flex gap-1">
+                  <button
+                    onClick={() => onSortChange('discount')}
+                    className={cn(
+                      'px-3 py-1 rounded-md text-sm font-medium transition-colors',
+                      sortBy === 'discount'
+                        ? 'bg-primary text-primary-foreground'
+                        : 'bg-muted text-muted-foreground hover:text-foreground'
+                    )}
+                  >
+                    Maior desconto
+                  </button>
+                  <button
+                    onClick={() => onSortChange('price')}
+                    className={cn(
+                      'px-3 py-1 rounded-md text-sm font-medium transition-colors',
+                      sortBy === 'price'
+                        ? 'bg-primary text-primary-foreground'
+                        : 'bg-muted text-muted-foreground hover:text-foreground'
+                    )}
+                  >
+                    Menor preço
+                  </button>
+                </div>
+              </div>
+
+              {/* Free Shipping Toggle */}
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={freeShippingOnly}
+                  onChange={(e) => onFreeShippingChange(e.target.checked)}
+                  className="h-4 w-4 rounded border-input text-primary focus:ring-ring"
+                />
+                <span className="text-sm text-muted-foreground">Frete grátis</span>
+              </label>
+            </div>
           </div>
         )}
       </div>

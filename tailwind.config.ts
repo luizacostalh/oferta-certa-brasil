@@ -65,6 +65,18 @@ export default {
           DEFAULT: "hsl(var(--mercadolivre))",
           foreground: "hsl(var(--mercadolivre-foreground))",
         },
+        magalu: {
+          DEFAULT: "hsl(var(--magalu))",
+          foreground: "hsl(var(--magalu-foreground))",
+        },
+        kabum: {
+          DEFAULT: "hsl(var(--kabum))",
+          foreground: "hsl(var(--kabum-foreground))",
+        },
+        havan: {
+          DEFAULT: "hsl(var(--havan))",
+          foreground: "hsl(var(--havan-foreground))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

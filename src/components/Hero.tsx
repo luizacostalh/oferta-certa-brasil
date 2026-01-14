@@ -38,7 +38,7 @@ export function Hero() {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto animate-fade-in">
-            Comparamos preços na Amazon e no Mercado Livre para destacar as melhores oportunidades.{' '}
+            Comparamos preços nas principais lojas e destacamos as melhores oportunidades.{' '}
             <span className="font-semibold text-primary-foreground">Você compra no site oficial.</span>
           </p>
 

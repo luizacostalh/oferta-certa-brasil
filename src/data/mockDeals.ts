@@ -1,3 +1,5 @@
+export type StoreType = 'amazon' | 'mercadolivre' | 'magalu' | 'kabum' | 'havan';
+
 export interface Deal {
   id: string;
   rank?: number;
@@ -6,7 +8,7 @@ export interface Deal {
   currentPrice: number;
   marketPrice: number;
   discountPercent: number;
-  store: 'amazon' | 'mercadolivre';
+  store: StoreType;
   category: string;
   shipping?: string;
   freeShipping: boolean;
@@ -20,12 +22,20 @@ export const categories = [
   { id: 'tvs', label: 'TVs', icon: '📺' },
   { id: 'notebooks', label: 'Notebooks', icon: '💻' },
   { id: 'fones', label: 'Fones de ouvido', icon: '🎧' },
-  { id: 'caixas', label: 'Caixas de som', icon: '🔊' },
+  { id: 'audio', label: 'Áudio', icon: '🔊' },
   { id: 'ar-condicionado', label: 'Ar-condicionado', icon: '❄️' },
-  { id: 'geladeira', label: 'Geladeira', icon: '🧊' },
-  { id: 'maquina-lavar', label: 'Máquina de lavar', icon: '🧺' },
+  { id: 'geladeiras', label: 'Geladeiras', icon: '🧊' },
+  { id: 'maquinas-lavar', label: 'Máquinas de lavar', icon: '🧺' },
   { id: 'micro-ondas', label: 'Micro-ondas', icon: '📡' },
   { id: 'air-fryer', label: 'Air fryer', icon: '🍟' },
+];
+
+export const stores = [
+  { id: 'amazon', label: 'Amazon' },
+  { id: 'mercadolivre', label: 'Mercado Livre' },
+  { id: 'magalu', label: 'Magalu' },
+  { id: 'kabum', label: 'KaBuM!' },
+  { id: 'havan', label: 'Havan' },
 ];
 
 export const mockDeals: Deal[] = [
@@ -52,7 +62,7 @@ export const mockDeals: Deal[] = [
     currentPrice: 2399,
     marketPrice: 3499,
     discountPercent: 31,
-    store: 'mercadolivre',
+    store: 'magalu',
     category: 'tvs',
     freeShipping: true,
     inStock: true,
@@ -67,7 +77,7 @@ export const mockDeals: Deal[] = [
     currentPrice: 8999,
     marketPrice: 12499,
     discountPercent: 28,
-    store: 'amazon',
+    store: 'kabum',
     category: 'notebooks',
     freeShipping: true,
     inStock: true,
@@ -97,7 +107,7 @@ export const mockDeals: Deal[] = [
     currentPrice: 349,
     marketPrice: 599,
     discountPercent: 42,
-    store: 'amazon',
+    store: 'havan',
     category: 'air-fryer',
     freeShipping: true,
     inStock: true,
@@ -112,7 +122,7 @@ export const mockDeals: Deal[] = [
     marketPrice: 1299,
     discountPercent: 31,
     store: 'amazon',
-    category: 'caixas',
+    category: 'audio',
     freeShipping: true,
     inStock: true,
     affiliateUrl: '#',
@@ -125,7 +135,7 @@ export const mockDeals: Deal[] = [
     currentPrice: 2199,
     marketPrice: 2999,
     discountPercent: 27,
-    store: 'mercadolivre',
+    store: 'magalu',
     category: 'ar-condicionado',
     shipping: 'R$ 199',
     freeShipping: false,
@@ -140,8 +150,8 @@ export const mockDeals: Deal[] = [
     currentPrice: 2799,
     marketPrice: 3799,
     discountPercent: 26,
-    store: 'amazon',
-    category: 'geladeira',
+    store: 'kabum',
+    category: 'geladeiras',
     freeShipping: true,
     inStock: true,
     affiliateUrl: '#',
@@ -154,8 +164,8 @@ export const mockDeals: Deal[] = [
     currentPrice: 1899,
     marketPrice: 2499,
     discountPercent: 24,
-    store: 'mercadolivre',
-    category: 'maquina-lavar',
+    store: 'havan',
+    category: 'maquinas-lavar',
     freeShipping: true,
     inStock: true,
     affiliateUrl: '#',
@@ -196,7 +206,7 @@ export const mockDeals: Deal[] = [
     currentPrice: 5999,
     marketPrice: 8499,
     discountPercent: 29,
-    store: 'amazon',
+    store: 'magalu',
     category: 'tvs',
     freeShipping: true,
     inStock: true,
@@ -208,15 +218,15 @@ export const mockDeals: Deal[] = [
 export const faqItems = [
   {
     question: 'Como vocês calculam o preço de mercado?',
-    answer: 'Quando possível, agrupamos produtos equivalentes (preferindo EAN/GTIN) e usamos a mediana do menor preço entre as lojas participantes. Isso nos dá uma base realista para calcular o desconto.',
+    answer: 'Agrupamos ofertas do mesmo produto (preferindo EAN/GTIN) e usamos a mediana do menor preço entre as lojas. Isso nos dá uma base realista para calcular o desconto.',
   },
   {
     question: 'Eu compro por aqui?',
-    answer: 'Não. Você clica em "Ver promoção" e finaliza a compra diretamente no site oficial (Amazon ou Mercado Livre). Nós apenas comparamos preços e direcionamos você para a melhor oferta.',
+    answer: 'Você escolhe a oferta e finaliza no site oficial do lojista (Amazon, Magalu, KaBuM!, Mercado Livre, Havan, etc.). Nós apenas comparamos preços.',
   },
   {
     question: 'Os preços são atualizados com qual frequência?',
-    answer: 'Nosso sistema verifica os preços a cada 24 horas. A data da última atualização é exibida em cada card de produto.',
+    answer: 'Nosso sistema verifica os preços a cada 30 minutos. A data da última atualização é exibida em cada card de produto.',
   },
   {
     question: 'Vocês ganham alguma comissão?',
