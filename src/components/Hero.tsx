@@ -25,19 +25,37 @@ export function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground mb-6 leading-tight animate-fade-in">
-            Price<span className="text-accent">Up</span> –{' '}
-            <span className="relative inline-block">
-              O melhor preço
-              <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none">
-                <path d="M2 6C50 2 150 2 198 6" stroke="hsl(var(--accent))" strokeWidth="3" strokeLinecap="round" />
-              </svg>
-            </span>{' '}
-            em destaque
-          </h1>
+<h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-primary-foreground leading-tight animate-fade-in">
+  Price<span className="text-accent">Up</span>
+</h1>
+
+
+{/* Slogan */}
+<p className="mt-4 md:mt-6 text-3xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground/90 animate-fade-in leading-snug">
+  Compare preços e{" "}
+  <span className="relative inline-block text-primary-foreground">
+    compre pelo menor valor
+    <svg
+      className="absolute -bottom-3 left-0 w-full"
+      viewBox="0 0 360 8"
+      fill="none"
+    >
+      <path
+        d="M2 6C90 2 270 2 358 6"
+        stroke="hsl(var(--accent))"
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+    </svg>
+  </span>
+</p>
+
+
+
+
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto animate-fade-in">
+          <p className="mt-8 text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto animate-fade-in">
             Comparamos preços nas principais lojas e destacamos as melhores oportunidades.{' '}
             <span className="font-semibold text-primary-foreground">Você compra no site oficial.</span>
           </p>
