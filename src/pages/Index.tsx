@@ -13,7 +13,7 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <AffiliateDisclosure />
+        
         <Top5Section deals={mockDeals} />
         <MoreDealsSection deals={mockDeals} />
         <FAQ />
