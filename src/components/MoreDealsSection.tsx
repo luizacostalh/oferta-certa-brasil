@@ -55,15 +55,11 @@ export function MoreDealsSection({ deals }: MoreDealsSectionProps) {
       <div className="container">
         {/* Section Header */}
         <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary text-secondary-foreground mb-4">
-            <Package className="h-4 w-4" />
-            <span className="text-sm font-semibold">Catálogo completo</span>
-          </div>
           <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-3">
-            Mais Ofertas
+            Continue economizando
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Outras ofertas relevantes além do Top 5, atualizadas periodicamente.
+            Descubra mais ofertas com preços monitorados e atualizados para você pagar menos.
           </p>
         </div>
       </div>
@@ -85,14 +81,15 @@ export function MoreDealsSection({ deals }: MoreDealsSectionProps) {
       <div className="container mt-8">
         {/* Results count */}
         <p className="text-sm text-muted-foreground mb-6">
-          {filteredDeals.length} {filteredDeals.length === 1 ? 'oferta encontrada' : 'ofertas encontradas'}
+          {filteredDeals.length}{' '}
+          {filteredDeals.length === 1 ? 'oferta encontrada' : 'ofertas encontradas'}
         </p>
 
         {/* Deals Grid */}
         {filteredDeals.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
             {filteredDeals.map((deal, index) => (
-              <div 
+              <div
                 key={deal.id}
                 className="animate-fade-in"
                 style={{ animationDelay: `${index * 50}ms` }}

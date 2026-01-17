@@ -19,10 +19,10 @@ export function Top5Section({ deals }: Top5SectionProps) {
             <span className="text-sm font-semibold">Melhores oportunidades</span>
           </div>
           <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-3">
-            Top 5 Ofertas de Hoje
+            Melhores ofertas de Hoje
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Os maiores descontos em eletrônicos e eletrodomésticos, rankeados pelo percentual de economia.
+            Os maiores descontos em eletrônicos e eletrodomésticos do momento.
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export function Top5Section({ deals }: Top5SectionProps) {
         <div className="mt-10 flex items-center justify-center gap-2 text-sm text-muted-foreground">
           <TrendingDown className="h-4 w-4 text-accent" />
           <span>
-            Economia total estimada: <strong className="text-accent">R$ 8.251</strong> comparado aos preços de mercado
+            Economize de <strong className="text-accent">VERDADE</strong>, comparando os preços do mercado
           </span>
         </div>
       </div>
