@@ -88,10 +88,7 @@ export function Footer() {
           <p className="text-sm text-primary-foreground/60">
             © {currentYear} PriceUp. Todos os direitos reservados.
           </p>
-          <p className="text-sm text-primary-foreground/60 flex items-center gap-1">
-            Feito com <Heart className="h-4 w-4 text-destructive fill-destructive" />{" "}
-            no Brasil
-          </p>
+
         </div>
 
         {/* Disclaimers (bem no final, discretos) */}
