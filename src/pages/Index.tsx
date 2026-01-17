@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react';
 
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
-import { AffiliateDisclosure } from '@/components/AffiliateDisclosure';
 import { Top5Section } from '@/components/Top5Section';
 import { MoreDealsSection } from '@/components/MoreDealsSection';
 import { SearchFilters } from '@/components/SearchFilters';
@@ -91,7 +90,7 @@ const Index = () => {
         <MoreDealsSection deals={moreDeals} />
 
         <FAQ />
-        <AffiliateDisclosure />
+      
       </main>
 
       <Footer />

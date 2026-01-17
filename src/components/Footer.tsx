@@ -10,12 +10,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-foreground text-primary font-bold">
-                5
-              </div>
-              <span className="text-lg font-bold">Top 5 Ofertas</span>
-            </div>
+            <div className="flex items-center mb-4">
+  <span className="text-lg font-bold">PriceUp</span>
+</div>
             <p className="text-sm text-primary-foreground/70 max-w-sm">
               Comparamos preços em Amazon e Mercado Livre para encontrar as melhores
               ofertas em eletrônicos e eletrodomésticos. Você compra direto no site
@@ -32,7 +29,7 @@ export function Footer() {
                   href="#top5"
                   className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
                 >
-                  Top 5 Ofertas
+                  PriceUp
                 </a>
               </li>
               <li>
@@ -89,7 +86,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-8 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-primary-foreground/60">
-            © {currentYear} Top 5 Ofertas. Todos os direitos reservados.
+            © {currentYear} PriceUp. Todos os direitos reservados.
           </p>
           <p className="text-sm text-primary-foreground/60 flex items-center gap-1">
             Feito com <Heart className="h-4 w-4 text-destructive fill-destructive" />{" "}
