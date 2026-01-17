@@ -7,7 +7,9 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-12 md:py-16">
+    // depois
+<section id="duvidas" className="py-12 md:py-16 scroll-mt-24">
+
       <div className="container">
         {/* Section Header */}
         <div className="text-center mb-10">

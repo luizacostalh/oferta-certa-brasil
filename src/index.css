@@ -203,4 +203,8 @@
       opacity: 0.7;
     }
   }
+  html {
+  scroll-behavior: smooth;
+}
+
 }
