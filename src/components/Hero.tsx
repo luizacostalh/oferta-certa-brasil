@@ -8,6 +8,16 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden gradient-hero py-16 md:py-24">
+      
+      {/* Mascote animado */}
+      <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 z-20 pointer-events-none">
+        <img
+  src="/mascot/priceup-wave.gif"
+  alt="Mascote PriceUp"
+  className="w-28 md:w-40 drop-shadow-2xl"
+/>
+      </div>
+
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-1/2 -right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
@@ -16,14 +26,6 @@ export function Hero() {
 
       <div className="container relative">
         <div className="max-w-3xl mx-auto text-center">
-          {/* Badge */}
-          {/*<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 mb-6 animate-fade-in">
-            <Sparkles className="h-4 w-4 text-accent" />
-            <span className="text-sm font-medium text-primary-foreground/90">
-              Atualizado automaticamente
-            </span>
-          </div>*/}
-
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-primary-foreground leading-tight animate-fade-in">
             Price<span className="text-accent">Up</span>
@@ -57,7 +59,7 @@ export function Hero() {
             </span>
           </p>
 
-          {/* CTA Button */}
+          {/* CTA */}
           <div className="flex justify-center items-center animate-fade-in">
             <Button variant="hero" size="xl" onClick={scrollToTop5}>
               Ver ofertas
@@ -68,7 +70,7 @@ export function Hero() {
           <div className="grid grid-cols-2 gap-6 mt-12 max-w-md mx-auto animate-fade-in">
             <div className="text-center">
               <div className="min-h-[3.25rem] md:min-h-[3.75rem] flex items-center justify-center">
-                <div className="text-xl md:text-2xl font-bold text-primary-foreground leading-tight whitespace-nowrap">
+                <div className="text-xl md:text-2xl font-bold text-primary-foreground">
                   Economize até <span className="text-accent">25%</span>
                 </div>
               </div>
@@ -79,7 +81,7 @@ export function Hero() {
 
             <div className="text-center border-l border-primary-foreground/20 pl-6">
               <div className="min-h-[3.25rem] md:min-h-[3.75rem] flex items-center justify-center">
-                <div className="text-xl md:text-2xl font-bold text-primary-foreground leading-tight whitespace-nowrap">
+                <div className="text-xl md:text-2xl font-bold text-primary-foreground">
                   Sites oficiais
                 </div>
               </div>
@@ -88,7 +90,7 @@ export function Hero() {
               </div>
             </div>
           </div>
-          {/* /Stats */}
+
         </div>
       </div>
     </section>
