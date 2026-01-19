@@ -10,12 +10,27 @@ export function Hero() {
     <section className="relative overflow-hidden gradient-hero py-16 md:py-24">
       
       {/* Mascote animado */}
-      <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 z-20 pointer-events-none">
-        <img
-  src="/mascot/priceup-wave.gif"
-  alt="Mascote PriceUp"
-  className="w-28 md:w-40 drop-shadow-2xl"
-/>
+      <div className="absolute right-[6rem] top-[32%] -translate-y-1/2 z-20 pointer-events-none">
+        <div className="relative w-28 md:w-40">
+          {/* Sombra de contato (colada no pé) */}
+          <div className="absolute left-1/2 bottom-2 md:bottom-3 -translate-x-1/2">
+            <div
+              className="w-16 md:w-20 h-4 md:h-5 rounded-full opacity-80"
+              style={{
+                background:
+                  "radial-gradient(ellipse at center, rgba(0,10,30,0.75) 0%, rgba(0,10,30,0.25) 60%, rgba(0,10,30,0) 85%)",
+                filter: "blur(4px)",
+              }}
+            />
+          </div>
+
+          {/* Mascote */}
+          <img
+            src="/mascot/priceup-wave.gif"
+            alt="Mascote PriceUp"
+            className="relative w-full"
+          />
+        </div>
       </div>
 
       {/* Background decoration */}
@@ -26,21 +41,15 @@ export function Hero() {
 
       <div className="container relative">
         <div className="max-w-3xl mx-auto text-center">
-          {/* Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-primary-foreground leading-tight animate-fade-in">
             Price<span className="text-accent">Up</span>
           </h1>
 
-          {/* Slogan */}
           <p className="mt-4 md:mt-6 text-3xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground/90 animate-fade-in leading-snug">
             Compare preços e{' '}
             <span className="relative inline-block text-primary-foreground">
               compre pelo menor valor
-              <svg
-                className="absolute -bottom-3 left-0 w-full"
-                viewBox="0 0 360 8"
-                fill="none"
-              >
+              <svg className="absolute -bottom-3 left-0 w-full" viewBox="0 0 360 8" fill="none">
                 <path
                   d="M2 6C90 2 270 2 358 6"
                   stroke="hsl(var(--accent))"
@@ -51,22 +60,17 @@ export function Hero() {
             </span>
           </p>
 
-          {/* Subheadline */}
           <p className="mt-8 text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto animate-fade-in">
             Comparamos preços nas principais lojas e destacamos as melhores oportunidades.{' '}
-            <span className="font-semibold text-primary-foreground">
-              Você compra no site oficial.
-            </span>
+            <span className="font-semibold text-primary-foreground">Você compra no site oficial.</span>
           </p>
 
-          {/* CTA */}
           <div className="flex justify-center items-center animate-fade-in">
             <Button variant="hero" size="xl" onClick={scrollToTop5}>
               Ver ofertas
             </Button>
           </div>
 
-          {/* Stats */}
           <div className="grid grid-cols-2 gap-6 mt-12 max-w-md mx-auto animate-fade-in">
             <div className="text-center">
               <div className="min-h-[3.25rem] md:min-h-[3.75rem] flex items-center justify-center">
@@ -90,7 +94,6 @@ export function Hero() {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
