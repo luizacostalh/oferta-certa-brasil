@@ -10,7 +10,7 @@ export function Hero() {
     <section className="relative overflow-hidden gradient-hero py-16 md:py-24">
       
       {/* Mascote animado */}
-      <div className="absolute right-[6rem] top-[32%] -translate-y-1/2 z-20 pointer-events-none">
+      <div className="hidden md:block absolute right-[6rem] top-[32%] -translate-y-1/2 z-20 pointer-events-none">
         <div className="relative w-28 md:w-40">
           {/* Sombra de contato (colada no pé) */}
           <div className="absolute left-1/2 bottom-2 md:bottom-3 -translate-x-1/2">
