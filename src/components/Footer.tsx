@@ -11,8 +11,8 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center mb-4">
-  <span className="text-lg font-bold">PriceUp</span>
-</div>
+              <span className="text-lg font-bold">PriceUp</span>
+            </div>
             <p className="text-sm text-primary-foreground/70 max-w-sm">
               Comparamos preços em Amazon e Mercado Livre para encontrar as melhores
               ofertas em eletrônicos e eletrodomésticos. Você compra direto no site
@@ -85,10 +85,33 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="mt-8 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
+          
+          {/* Mascote no footer (somente mobile) */}
+          <div className="md:hidden w-full flex justify-center">
+            <div className="relative w-24">
+              {/* Sombra de contato (colada no pé) */}
+              <div className="absolute left-1/2 bottom-1 -translate-x-1/2">
+                <div
+                  className="w-14 h-4 rounded-full opacity-80"
+                  style={{
+                    background:
+                      "radial-gradient(ellipse at center, rgba(0,10,30,0.75) 0%, rgba(0,10,30,0.25) 60%, rgba(0,10,30,0) 85%)",
+                    filter: "blur(4px)",
+                  }}
+                />
+              </div>
+
+              <img
+                src="/mascot/priceup-wave.gif"
+                alt="Mascote PriceUp"
+                className="relative w-full"
+              />
+            </div>
+          </div>
+
           <p className="text-sm text-primary-foreground/60">
             © {currentYear} PriceUp. Todos os direitos reservados.
           </p>
-
         </div>
 
         {/* Disclaimers (bem no final, discretos) */}
