@@ -4,7 +4,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="relative bg-primary text-primary-foreground">
       {/* Main Footer */}
       <div className="container py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -86,28 +86,28 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-8 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
           
-          {/* Mascote no footer (somente mobile) */}
-          <div className="md:hidden w-full flex justify-center">
-            <div className="relative w-24">
-              {/* Sombra de contato (colada no pé) */}
-              <div className="absolute left-1/2 bottom-1 -translate-x-1/2">
-                <div
-                  className="w-14 h-4 rounded-full opacity-80"
-                  style={{
-                    background:
-                      "radial-gradient(ellipse at center, rgba(0,10,30,0.75) 0%, rgba(0,10,30,0.25) 60%, rgba(0,10,30,0) 85%)",
-                    filter: "blur(4px)",
-                  }}
-                />
-              </div>
+          {/* Mascote flutuante no footer (somente mobile) */}
+<div className="md:hidden absolute right-4 bottom-24 z-30 pointer-events-none">
+  <div className="relative w-20">
+    {/* sombra de contato */}
+    <div className="absolute left-1/2 bottom-1 -translate-x-1/2">
+      <div
+        className="w-12 h-3 rounded-full opacity-80"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, rgba(0,10,30,0.75) 0%, rgba(0,10,30,0.25) 60%, rgba(0,10,30,0) 85%)",
+          filter: "blur(4px)",
+        }}
+      />
+    </div>
 
-              <img
-                src="/mascot/priceup-wave.gif"
-                alt="Mascote PriceUp"
-                className="relative w-full"
-              />
-            </div>
-          </div>
+    <img
+      src="/mascot/priceup-wave.gif"
+      alt="Mascote PriceUp"
+      className="relative w-full"
+    />
+  </div>
+</div>
 
           <p className="text-sm text-primary-foreground/60">
             © {currentYear} PriceUp. Todos os direitos reservados.
