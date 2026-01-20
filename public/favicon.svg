@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0C3A8D"/>
+      <stop offset="1" stop-color="#0A2C74"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fundo -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bg)"/>
+
+  <!-- Grupo centralizado no meio exato -->
+  <g transform="translate(32 32)">
+
+    <!-- Letras -->
+    <g fill="none"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       stroke-width="6"
+       transform="translate(-20 -16)">
+
+      <!-- P -->
+      <path stroke="#FFFFFF"
+        d="M0 32 V0
+           M0 0 H10
+           Q18 0 18 8
+           Q18 16 10 16
+           H0" />
+
+      <!-- U -->
+      <path stroke="#20B26B"
+        d="M26 0 V20
+           Q26 32 36 32
+           Q46 32 46 20
+           V0" />
+
+    </g>
+  </g>
+</svg>
