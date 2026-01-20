@@ -87,7 +87,7 @@ export function Footer() {
         <div className="mt-8 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
           
           {/* Mascote flutuante no footer (somente mobile) */}
-<div className="md:hidden absolute right-4 bottom-44 z-30 pointer-events-none">
+<div className="md:hidden absolute right-4 bottom-56 z-30 pointer-events-none">
   <div className="relative w-28">
     {/* sombra de contato */}
     <div className="absolute left-1/2 bottom-1 -translate-x-1/2">
